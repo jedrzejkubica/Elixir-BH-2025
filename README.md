@@ -12,6 +12,8 @@ Use [haploblock_breakpoints.ipynb](haploblock_breakpoints.ipynb)
 
 We found 12 positions with high recombination rates defined as **rate > 2*average**:
 
+![alt text](figures/recomb_map_chr6_mat_outliersAVG.png)
+
 | Position | Recombination rate (DSBs/Mb per meiosis) |
 |----------|------------------------------------------|
 | chr6:4500000 | 0.2726089060306549 |
@@ -29,6 +31,10 @@ We found 12 positions with high recombination rates defined as **rate > 2*averag
 
 
 Alternatively, we found 7 positions with high recombination rates defined as **rate > 1.5*IQR**:
+
+![alt text](figures/recomb_map_chr6_mat_boxplot.png)
+
+![alt text](figures/recomb_map_chr6_mat_outliersIQR.png)
 
 | Position | Recombination rate (DSBs/Mb per meiosis) |
 |----------|------------------------------------------|
