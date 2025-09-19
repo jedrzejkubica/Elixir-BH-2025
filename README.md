@@ -1,4 +1,8 @@
+> Elixir BioHackathon November 3-7, 2025
+
 # Elixir-BH-2025
+
+# Methods
 
 Download deCODE recombination maps including both crossover (CO) and non-crossover (NCO) recombination: https://doi.org/10.5281/zenodo.14025564
 
@@ -12,10 +16,13 @@ How the data looks:
 | chr1 | 3500000 | 0.07209863513708115 | 1.9589810371398926 | 0.3275741636753082 | 0.3099609315395355 | 0.0027675277087837458 |
 | chr1 | 4500000 | 0.06319160014390945 | 2.5238749980926514 | 0.3032439053058624 | 0.1271921992301941 | 0.002952029462903738 |
 
-
-# Methods
-
 Use [haploblock_breakpoints.ipynb](haploblock_breakpoints.ipynb)
+
+Download 1000Genomes phased VCF files for chr6:
+
+`wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz`
+
+`wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz.tbi`
 
 
 # Results
@@ -55,7 +62,6 @@ Alternatively, we found 7 positions with high recombination rates defined as **r
 | chr6:57500000 | 0.27551886439323425 |
 | chr6:58500000 | 0.37233930826187134 |
 | chr6:59500000 | 0.7373786568641663 |
-
 
 
 # Python environment
