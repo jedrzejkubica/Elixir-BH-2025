@@ -27,7 +27,7 @@ Download 1000Genomes phased VCF files for chr6:
 
 # Results
 
-We found 12 positions with high recombination rates defined as **rate > 2*average**:
+1) We found 12 positions with high recombination rates defined as **rate > 2*average**:
 
 ![alt text](figures/recomb_map_chr6_mat_outliersAVG.png)
 
@@ -47,7 +47,7 @@ We found 12 positions with high recombination rates defined as **rate > 2*averag
 | chr6:166500000 | 0.25078296661376953 |
 
 
-Alternatively, we found 7 positions with high recombination rates defined as **rate > 1.5*IQR**:
+2) We found 7 positions with high recombination rates defined as **rate > 1.5*IQR**:
 
 ![alt text](figures/recomb_map_chr6_mat_boxplot.png)
 
@@ -63,6 +63,18 @@ Alternatively, we found 7 positions with high recombination rates defined as **r
 | chr6:58500000 | 0.37233930826187134 |
 | chr6:59500000 | 0.7373786568641663 |
 
+3) We found 6 positions with high recombination rates defined as **peaks after Gaussian smooting**:
+
+![alt text](figures/recomb_map_chr6_mat_smoothed_peaks.png)
+
+| Position | Recombination rate (DSBs/Mb per meiosis) |
+|----------|------------------------------------------|
+| chr6:7500000 | 0.2730921804904938 |
+| chr6:38500000 | 0.08716981112957001 |
+| chr6:58500000 | 0.37233930826187134 |
+| chr6:90500000 | 0.12601755559444427 |
+| chr6:106500000 | 0.13935035467147827 |
+| chr6:165500000 | 0.2063562124967575 |
 
 # Python environment
 
