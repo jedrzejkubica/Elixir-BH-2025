@@ -65,7 +65,7 @@ Are map (cM), cMperMb, DSBs/Mb per meiosis, deltaDSB and oNCO correlated?
 
 3) We found 6 positions with high recombination rates defined as **peaks after Gaussian smooting**:
 
-![alt text](figures/recomb_map_chr6_mat_smoothed_peaks.png)
+![alt text](figures/recomb_map_chr6_mat_GS_peaks.png)
 
 | Position | Recombination rate (DSBs/Mb per meiosis) |
 |----------|------------------------------------------|
@@ -75,6 +75,12 @@ Are map (cM), cMperMb, DSBs/Mb per meiosis, deltaDSB and oNCO correlated?
 | chr6:90500000 | 0.12601755559444427 |
 | chr6:106500000 | 0.13935035467147827 |
 | chr6:165500000 | 0.2063562124967575 |
+
+For more information about Gaussian smoothing see: https://en.wikipedia.org/wiki/Gaussian_filter
+
+We compared different sigma for Gaussian smoothing:
+
+![alt text](figures/recomb_map_chr6_mat_GS_compare_sigma.png)
 
 # Python environment
 
