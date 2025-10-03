@@ -6,6 +6,8 @@
 
 Download deCODE recombination maps including both crossover (CO) and non-crossover (NCO) recombination: https://doi.org/10.5281/zenodo.14025564
 
+Use [haploblock_breakpoints.ipynb](haploblock_breakpoints.ipynb)
+
 How the data looks:
 
 | Chr | Position | map (cM) | cMperMb | DSBs/Mb per meiosis | deltaDSB | oNCO |
@@ -16,13 +18,11 @@ How the data looks:
 | chr1 | 3500000 | 0.07209863513708115 | 1.9589810371398926 | 0.3275741636753082 | 0.3099609315395355 | 0.0027675277087837458 |
 | chr1 | 4500000 | 0.06319160014390945 | 2.5238749980926514 | 0.3032439053058624 | 0.1271921992301941 | 0.002952029462903738 |
 
-Use [haploblock_breakpoints.ipynb](haploblock_breakpoints.ipynb)
+Are map (cM), cMperMb, DSBs/Mb per meiosis, deltaDSB and oNCO correlated?
 
-Download 1000Genomes phased VCF files for chr6:
+![alt text](figures/recomb_map_chr6_mat_all_columns_one_plot_norm.png)
 
-`wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz`
-
-`wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz.tbi`
+![alt text](figures/recomb_map_chr6_mat_all_columns_corr.png)
 
 
 # Results
