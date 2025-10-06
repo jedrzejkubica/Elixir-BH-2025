@@ -27,9 +27,11 @@ Are map (cM), cMperMb, DSBs/Mb per meiosis, deltaDSB and oNCO correlated?
 
 # Results
 
+First, we found haploblocks using DSB.
+
 1) We found 12 positions with high recombination rates defined as **rate > 2*average**:
 
-![alt text](figures/recomb_map_chr6_mat_outliersAVG.png)
+![alt text](figures/DSB-based-haploblocks/recomb_map_chr6_mat_outliersAVG.png)
 
 | Position | Recombination rate (DSBs/Mb per meiosis) |
 |----------|------------------------------------------|
@@ -49,9 +51,9 @@ Are map (cM), cMperMb, DSBs/Mb per meiosis, deltaDSB and oNCO correlated?
 
 2) We found 7 positions with high recombination rates defined as **rate > 1.5*IQR**:
 
-![alt text](figures/recomb_map_chr6_mat_boxplot.png)
+![alt text](figures/DSB-based-haploblocks/recomb_map_chr6_mat_boxplot.png)
 
-![alt text](figures/recomb_map_chr6_mat_outliersIQR.png)
+![alt text](figures/DSB-based-haploblocks/recomb_map_chr6_mat_outliersIQR.png)
 
 | Position | Recombination rate (DSBs/Mb per meiosis) |
 |----------|------------------------------------------|
@@ -65,7 +67,7 @@ Are map (cM), cMperMb, DSBs/Mb per meiosis, deltaDSB and oNCO correlated?
 
 3) We found 6 positions with high recombination rates defined as **peaks after Gaussian smooting**:
 
-![alt text](figures/recomb_map_chr6_mat_GS_peaks.png)
+![alt text](figures/DSB-based-haploblocks/recomb_map_chr6_mat_GS_peaks.png)
 
 | Position | Recombination rate (DSBs/Mb per meiosis) |
 |----------|------------------------------------------|
@@ -80,7 +82,10 @@ For more information about Gaussian smoothing see: https://en.wikipedia.org/wiki
 
 We compared different sigma for Gaussian smoothing:
 
-![alt text](figures/recomb_map_chr6_mat_GS_compare_sigma.png)
+![alt text](figures/DSB-based-haploblocks/recomb_map_chr6_mat_GS_compare_sigma.png)
+
+Second, we found haploblocks using cMperMb (crossover recombination maps - Halldorsson:2019).
+
 
 # Python environment
 
