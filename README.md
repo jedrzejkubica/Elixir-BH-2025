@@ -4,9 +4,11 @@
 
 # Methods
 
-Download deCODE recombination maps including both crossover (CO) and non-crossover (NCO) recombination: https://doi.org/10.5281/zenodo.14025564
+All code is in [haploblock_breakpoints.ipynb](haploblock_breakpoints.ipynb)
 
-Use [haploblock_breakpoints.ipynb](haploblock_breakpoints.ipynb)
+### Recombination map from Palsson et al., 2024
+
+Download deCODE recombination maps including both crossover (CO) and non-crossover (NCO) recombination: https://doi.org/10.5281/zenodo.14025564
 
 How the data looks:
 
@@ -20,18 +22,23 @@ How the data looks:
 
 Are map (cM), cMperMb, DSBs/Mb per meiosis, deltaDSB and oNCO correlated?
 
-![alt text](figures/recomb_map_chr6_mat_all_columns_one_plot_norm.png)
+![alt text](figures/Palsson2024/recomb_map_chr6_mat_all_columns_one_plot_norm.png)
 
-![alt text](figures/recomb_map_chr6_mat_all_columns_corr.png)
+![alt text](figures/Palsson2024/recomb_map_chr6_mat_all_columns_corr.png)
+
+
+### Recombination map from Halldorsson et al., 2019
+
+Download the recombination map from Supp Mat. The map has the following columns: Chr, Begin, End, **cMperMb**, cM
 
 
 # Results
 
-First, we found haploblocks using DSB.
+### Recombination map from Palsson et al., 2024; we used DSB rate to find haploblock boundaries
 
 1) We found 12 positions with high recombination rates defined as **rate > 2*average**:
 
-![alt text](figures/DSB-based-haploblocks/recomb_map_chr6_mat_outliersAVG.png)
+![alt text](figures/Palsson2024/recomb_map_chr6_mat_outliersAVG.png)
 
 | Position | Recombination rate (DSBs/Mb per meiosis) |
 |----------|------------------------------------------|
@@ -51,9 +58,9 @@ First, we found haploblocks using DSB.
 
 2) We found 7 positions with high recombination rates defined as **rate > 1.5*IQR**:
 
-![alt text](figures/DSB-based-haploblocks/recomb_map_chr6_mat_boxplot.png)
+![alt text](figures/Palsson2024/recomb_map_chr6_mat_boxplot.png)
 
-![alt text](figures/DSB-based-haploblocks/recomb_map_chr6_mat_outliersIQR.png)
+![alt text](figures/Palsson2024/recomb_map_chr6_mat_outliersIQR.png)
 
 | Position | Recombination rate (DSBs/Mb per meiosis) |
 |----------|------------------------------------------|
@@ -67,7 +74,7 @@ First, we found haploblocks using DSB.
 
 3) We found 6 positions with high recombination rates defined as **peaks after Gaussian smooting**:
 
-![alt text](figures/DSB-based-haploblocks/recomb_map_chr6_mat_GS_peaks.png)
+![alt text](figures/Palsson2024/recomb_map_chr6_mat_GS_peaks.png)
 
 | Position | Recombination rate (DSBs/Mb per meiosis) |
 |----------|------------------------------------------|
@@ -82,10 +89,18 @@ For more information about Gaussian smoothing see: https://en.wikipedia.org/wiki
 
 We compared different sigma for Gaussian smoothing:
 
-![alt text](figures/DSB-based-haploblocks/recomb_map_chr6_mat_GS_compare_sigma.png)
+![alt text](figures/Palsson2024/recomb_map_chr6_mat_GS_compare_sigma.png)
 
-Second, we found haploblocks using cMperMb (crossover recombination maps - Halldorsson:2019).
 
+### Recombination map from Halldersson et al., 2019; we used cMperMb to find haploblock boundaries
+
+1) We found 1398 positions with high recombination rates defined as **rate > 10*average**.
+
+2) We found 11855 positions with high recombination rates defined as **rate > 1.5*IQR**.
+
+3) We found 2287 positions with high recombination rates defined as **peaks after Gaussian smooting** (sigma=5). Zoom in on the first peak:
+
+![alt text](figures/Halldorsson2019/recomb_map_chr6_Halldorsson2019_GS_peaks_zoom_in.png)
 
 # Python environment
 
