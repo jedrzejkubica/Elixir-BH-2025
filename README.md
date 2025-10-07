@@ -29,7 +29,7 @@ Are map (cM), cMperMb, DSBs/Mb per meiosis, deltaDSB and oNCO correlated?
 
 ### Recombination map from Halldorsson et al., 2019
 
-Download the recombination map from Supp Mat. The map has the following columns: Chr, Begin, End, **cMperMb**, cM
+Download high-resolution recombination map from Halldorsson et al., 2019. The map contains empirically defined recombination rates (**cMperMb**).
 
 
 # Results
@@ -131,3 +131,5 @@ Check [requirements.txt](requirements.txt) for versioning.
 # References
 
 1. Palsson, G., Hardarson, M.T., Jonsson, H. et al. Complete human recombination maps. Nature 639, 700–707 (2025). https://doi.org/10.1038/s41586-024-08450-5
+
+2. Bjarni V. Halldorsson et al., Characterizing mutagenic effects of recombination through a sequence-level genetic map. Science363,eaau1043 (2019). DOI:10.1126/science.aau1043
