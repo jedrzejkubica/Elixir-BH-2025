@@ -102,6 +102,18 @@ We compared different sigma for Gaussian smoothing:
 
 ![alt text](figures/Halldorsson2019/recomb_map_chr6_Halldorsson2019_GS_peaks_zoom_in.png)
 
+We compared different sigma for Gaussian smoothing:
+
+![alt text](figures/recomb_map_chr6_Halldorsson2019_GS_compare_sigma_zoom_in.png)
+
+The number of peaks found with different sigma:
+| Sigma | Number of peaks |
+|-------|-----------------|
+| 1 | 8245 |
+| 3 | 3579 |
+| 5 | 2287 |
+| 10 | 1210 |
+
 # Python environment
 
 Installed via [Python venv](https://docs.python.org/3/library/venv.html) with the following command:
