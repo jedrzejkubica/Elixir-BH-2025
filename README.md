@@ -94,7 +94,9 @@ We compared different sigma for Gaussian smoothing:
 
 ### Recombination map from Halldersson et al., 2019; we used cMperMb to find haploblock boundaries
 
-1) We found 1398 positions with high recombination rates defined as **rate > 10*average**.
+1) We found 1398 positions with high recombination rates defined as **rate > 10*average**:
+
+see haploblock_boundaries_Halldorsson2019.txt
 
 2) We found 11855 positions with high recombination rates defined as **rate > 1.5*IQR**.
 
