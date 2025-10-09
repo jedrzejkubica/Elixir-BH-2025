@@ -116,6 +116,33 @@ The number of peaks found with different sigma:
 | 5 | 2287 |
 | 10 | 1210 |
 
+
+### 1000Genomes, HGSVC, Phase 3
+
+Population: Han Chinese in Beijing, China
+
+https://www.internationalgenome.org/data-portal/population/CHB
+
+Download FASTQ and CRAM files
+
+for each haploblock do:
+
+samtools view -b sample.bam chr6:START-END > chr6_region.bam
+
+samtools fastq chr6_region.bam > chr6_region.fastq
+
+cat *_chr6_region.fastq > combined_chr6_region.fastq
+
+seqtk seq -A combined_chr6_region.fastq > combined_chr6_region.fasta
+
+Haplotype clustering by sequence identity:
+
+cd-hit-est -i combined_chr6_region.fasta -o clustered.fa -c 0.98
+
+
+
+
+
 # Python environment
 
 Installed via [Python venv](https://docs.python.org/3/library/venv.html) with the following command:
