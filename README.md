@@ -106,7 +106,7 @@ see haploblock_boundaries_Halldorsson2019.txt
 
 We compared different sigma for Gaussian smoothing:
 
-![alt text](figures/recomb_map_chr6_Halldorsson2019_GS_compare_sigma_zoom_in.png)
+![alt text](figures/Halldorsson2019/recomb_map_chr6_Halldorsson2019_GS_compare_sigma_zoom_in.png)
 
 The number of peaks found with different sigma:
 | Sigma | Number of peaks |
@@ -119,26 +119,19 @@ The number of peaks found with different sigma:
 
 ### 1000Genomes, HGSVC, Phase 3
 
-Population: Han Chinese in Beijing, China
+Population: Han Chinese in Beijing, China (https://www.internationalgenome.org/data-portal/population/CHB)
 
-https://www.internationalgenome.org/data-portal/population/CHB
+download and parse test data:
 
-Download FASTQ and CRAM files
+```
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR151/009/SRR1518049/SRR1518049_1.fastq.gz
+seqkit fq2fa SRR1518049_1.fastq.gz -o SRR1518049_1.fa
+```
 
-for each haploblock do:
-
-samtools view -b sample.bam chr6:START-END > chr6_region.bam
-
-samtools fastq chr6_region.bam > chr6_region.fastq
-
-cat *_chr6_region.fastq > combined_chr6_region.fastq
-
-seqtk seq -A combined_chr6_region.fastq > combined_chr6_region.fasta
-
-Haplotype clustering by sequence identity:
-
-cd-hit-est -i combined_chr6_region.fasta -o clustered.fa -c 0.98
-
+test Snakemake workflow from TWILIGHT (https://github.com/TurakhiaLab/TWILIGHT):
+```
+snakemake --cores 8 --config TYPE=n SEQ=data/SRR1518049_1.fa OUT=SRR1518049_1.aln
+```
 
 
 
@@ -162,3 +155,5 @@ Check [requirements.txt](requirements.txt) for versioning.
 1. Palsson, G., Hardarson, M.T., Jonsson, H. et al. Complete human recombination maps. Nature 639, 700–707 (2025). https://doi.org/10.1038/s41586-024-08450-5
 
 2. Bjarni V. Halldorsson et al., Characterizing mutagenic effects of recombination through a sequence-level genetic map. Science363,eaau1043 (2019). DOI:10.1126/science.aau1043
+
+3. Yu-Hsiang Tseng, Sumit Walia, Yatish Turakhia, "Ultrafast and ultralarge multiple sequence alignments using TWILIGHT", Bioinformatics, Volume 41, Issue Supplement_1, July 2025, Pages i332–i341, doi: 10.1093/bioinformatics/btaf212 
