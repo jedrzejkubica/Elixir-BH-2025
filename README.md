@@ -4,7 +4,7 @@
 
 # Data
 
-We assume all data is downloaded into `data/`:
+We assume all data listed below is downloaded into `data/`:
 
 1. deCODE recombination map from Palsson et al., 2024 including both crossover (CO) and non-crossover (NCO) recombination: https://doi.org/10.5281/zenodo.14025564
 
@@ -27,17 +27,7 @@ https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr6.fa.gz
 
 # Workflow
 
-1. Generate haploblock boundaries
-
-2. 1000Genomes phased VCF
-
-3. Haploblock phased VCFs
-
-4. Phased fasta files 
-
-5. Population-specific haploblock alignments
-
-6. Population-specific haploblock clusters
+TBD
 
 
 ## Haploblock boundaries
@@ -149,47 +139,30 @@ The number of peaks found with different sigma:
 
 ## Run pipeline
 
+1. Generate haploblock boundaries
 ```
-python haploblock_boundaries.py --recombination_file data/Halldorsson2019/aau1043_datas3 --chr chr6 > haploblock_boundaries_chr6.tsv
+python haploblock_boundaries.py --recombination_file data/Halldorsson2019/aau1043_datas3 --chr chr6 > data/haploblock_boundaries_chr6.tsv
 ```
 
+2. 1000Genomes phased VCF -> Haploblock phased VCFs -> Phased fasta files
+```
+python split_VCF.py  --boundaries_file data/haploblock_boundaries_chr6.tsv --vcf data/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz --ref data/ref_chr6.fa.gz --chr_map data/chr_map --chr 6 --out data/
+```
 
 VCF has 6 instead of chr6, which is required by bcftools consensus, create chr_map: "6 chr6" one mapping per line
 
+5. Population-specific haploblock alignments
 
+TBD
 
-## Population-specific haploblock alignments
-
-Generate haploblock phased VCFs
-
-extract haploblock regions from VCF
-```
-bcftools view -r 6:711055-761032 ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz -o region1.vcf.gz
-```
-
-
-extract region from reference
-```
-gzip -d ref_chr6.fa.gz
-bgzip ref_chr6.fa
-samtools faidx ref_chr6.fa.gz
-samtools faidx ref_chr6.fa.gz chr6:711055-761032
-```
-
-
-
-
-## Population-specific haploblock clusters
-
-
-test Snakemake workflow from TWILIGHT (https://github.com/TurakhiaLab/TWILIGHT):
+Snakemake workflow from TWILIGHT (https://github.com/TurakhiaLab/TWILIGHT):
 ```
 snakemake --cores 8 --config TYPE=n SEQ=data/SRR1518049_1.fa OUT=SRR1518049_1.aln
 ```
 
+6. Population-specific haploblock clusters
 
-
-
+TBD
 
 
 # Dependencies
