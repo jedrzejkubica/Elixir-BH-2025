@@ -2,13 +2,49 @@
 
 # Elixir-BH-2025
 
-# Methods
+# Data
 
-All code is in [haploblock_breakpoints.ipynb](haploblock_breakpoints.ipynb)
+We assume all data is downloaded into `data/`:
+
+1. deCODE recombination map from Palsson et al., 2024 including both crossover (CO) and non-crossover (NCO) recombination: https://doi.org/10.5281/zenodo.14025564
+
+2. high-resolution recombination map from Halldorsson et al., 2019 with empirically defined recombination rates (**cMperMb**)
+
+3. 1000Genomes, HGSVC, Phase 3: phased VCF file for Han Chinese in Beijing, China (https://www.internationalgenome.org/data-portal/population/CHB) chromosome 6:
+```
+wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz
+```
+
+```
+wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz.tbi
+```
+
+4. Reference sequence for chromosome 6 (GRCh38):
+```
+https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr6.fa.gz
+```
+
+
+# Workflow
+
+1. Generate haploblock boundaries
+
+2. 1000Genomes phased VCF
+
+3. Haploblock phased VCFs
+
+4. Phased fasta files 
+
+5. Population-specific haploblock alignments
+
+6. Population-specific haploblock clusters
+
+
+## Haploblock boundaries
+
+All code for exploring recombination maps is in [haploblock_breakpoints.ipynb](haploblock_breakpoints.ipynb)
 
 ### Recombination map from Palsson et al., 2024
-
-Download deCODE recombination maps including both crossover (CO) and non-crossover (NCO) recombination: https://doi.org/10.5281/zenodo.14025564
 
 How the data looks:
 
@@ -26,15 +62,7 @@ Are map (cM), cMperMb, DSBs/Mb per meiosis, deltaDSB and oNCO correlated?
 
 ![alt text](figures/Palsson2024/recomb_map_chr6_mat_all_columns_corr.png)
 
-
-### Recombination map from Halldorsson et al., 2019
-
-Download high-resolution recombination map from Halldorsson et al., 2019. The map contains empirically defined recombination rates (**cMperMb**).
-
-
-# Results
-
-### Recombination map from Palsson et al., 2024; we used DSB rate to find haploblock boundaries
+We used DSB rate to find haploblock boundaries.
 
 1) We found 12 positions with high recombination rates defined as **rate > 2*average**:
 
@@ -92,11 +120,17 @@ We compared different sigma for Gaussian smoothing:
 ![alt text](figures/Palsson2024/recomb_map_chr6_mat_GS_compare_sigma.png)
 
 
-### Recombination map from Halldersson et al., 2019; we used cMperMb to find haploblock boundaries
+### Recombination map from Halldersson et al., 2019
+
+```
+python haploblock_boundaries.py --recombination_file data/Halldorsson2019/aau1043_datas3 --chr chr6 > haploblock_boundaries_chr6.tsv
+```
+
+We used cMperMb to generate haploblock boundaries. 
 
 1) We found 1398 positions with high recombination rates defined as **rate > 10*average**:
 
-see haploblock_boundaries_Halldorsson2019.txt
+see haploblock_boundaries_chr6.tsv
 
 2) We found 11855 positions with high recombination rates defined as **rate > 1.5*IQR**.
 
@@ -117,16 +151,30 @@ The number of peaks found with different sigma:
 | 10 | 1210 |
 
 
-### 1000Genomes, HGSVC, Phase 3
 
-Population: Han Chinese in Beijing, China (https://www.internationalgenome.org/data-portal/population/CHB)
+## Population-specific haploblock alignments
 
-download and parse test data:
+Generate haploblock phased VCFs
 
+extract haploblock regions from VCF
 ```
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR151/009/SRR1518049/SRR1518049_1.fastq.gz
-seqkit fq2fa SRR1518049_1.fastq.gz -o SRR1518049_1.fa
+bcftools view -r 6:711055-761032 ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz -o region1.vcf.gz
 ```
+
+
+extract region from reference
+```
+gzip -d ref_chr6.fa.gz
+bgzip ref_chr6.fa
+samtools faidx ref_chr6.fa.gz
+samtools faidx ref_chr6.fa.gz chr6:711055-761032
+```
+
+
+
+
+## Population-specific haploblock clusters
+
 
 test Snakemake workflow from TWILIGHT (https://github.com/TurakhiaLab/TWILIGHT):
 ```
@@ -136,7 +184,15 @@ snakemake --cores 8 --config TYPE=n SEQ=data/SRR1518049_1.fa OUT=SRR1518049_1.al
 
 
 
-# Python environment
+
+
+# Dependencies
+
+install samtools, tabix, bcftools (https://www.htslib.org/)
+
+install TWILIGHT (https://github.com/TurakhiaLab/TWILIGHT)
+
+## Python environment
 
 Installed via [Python venv](https://docs.python.org/3/library/venv.html) with the following command:
 
@@ -156,4 +212,4 @@ Check [requirements.txt](requirements.txt) for versioning.
 
 2. Bjarni V. Halldorsson et al., Characterizing mutagenic effects of recombination through a sequence-level genetic map. Science363,eaau1043 (2019). DOI:10.1126/science.aau1043
 
-3. Yu-Hsiang Tseng, Sumit Walia, Yatish Turakhia, "Ultrafast and ultralarge multiple sequence alignments using TWILIGHT", Bioinformatics, Volume 41, Issue Supplement_1, July 2025, Pages i332–i341, doi: 10.1093/bioinformatics/btaf212 
+3. Yu-Hsiang Tseng, Sumit Walia, Yatish Turakhia, "Ultrafast and ultralarge multiple sequence alignments using TWILIGHT", Bioinformatics, Volume 41, Issue Supplement_1, July 2025, Pages i332–i341, doi: 10.1093/bioinformatics/btaf212
