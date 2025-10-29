@@ -122,10 +122,6 @@ We compared different sigma for Gaussian smoothing:
 
 ### Recombination map from Halldersson et al., 2019
 
-```
-python haploblock_boundaries.py --recombination_file data/Halldorsson2019/aau1043_datas3 --chr chr6 > haploblock_boundaries_chr6.tsv
-```
-
 We used cMperMb to generate haploblock boundaries. 
 
 1) We found 1398 positions with high recombination rates defined as **rate > 10*average**:
@@ -149,6 +145,16 @@ The number of peaks found with different sigma:
 | 3 | 3579 |
 | 5 | 2287 |
 | 10 | 1210 |
+
+
+## Run pipeline
+
+```
+python haploblock_boundaries.py --recombination_file data/Halldorsson2019/aau1043_datas3 --chr chr6 > haploblock_boundaries_chr6.tsv
+```
+
+
+VCF has 6 instead of chr6, which is required by bcftools consensus, create chr_map: "6 chr6" one mapping per line
 
 
 
@@ -188,7 +194,7 @@ snakemake --cores 8 --config TYPE=n SEQ=data/SRR1518049_1.fa OUT=SRR1518049_1.al
 
 # Dependencies
 
-install samtools, tabix, bcftools (https://www.htslib.org/)
+install samtools, tabix, bcftools (https://www.htslib.org/), all must be in /usr/bin
 
 install TWILIGHT (https://github.com/TurakhiaLab/TWILIGHT)
 
