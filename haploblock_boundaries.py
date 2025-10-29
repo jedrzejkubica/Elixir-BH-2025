@@ -20,17 +20,20 @@ def parse_recombination_rates(recombination_file, chromosome):
     returns:
     - haploblock_boundaries: list of tuples with haploblock boundaries (start, end)
     """
-    try:
-        f = open(recombination_file, 'r')
-    except Exception as e:
-        logger.error("Opening provided recombination file %s: %s", recombination_file, e)
-        raise Exception("Cannot open provided recombination file")
+    if not chromosome.startswith("chr"):
+        chromosome = "chr" + str(chromosome)
     
     haploblock_boundaries = []
     positions = []
     rates = []
     high_rates = []
     high_rates_positions = []
+
+    try:
+        f = open(recombination_file, 'r')
+    except Exception as e:
+        logger.error("Opening provided recombination file %s: %s", recombination_file, e)
+        raise Exception("Cannot open provided recombination file")
 
     for line in f:
         # skip header
@@ -62,12 +65,12 @@ def parse_recombination_rates(recombination_file, chromosome):
     logger.info("Found %i positions with recombination rates > 10 x average", len(high_rates))
     
     for i in range(len(high_rates_positions)):
-        boundary_start = high_rates_positions[i]
-        if i == len(high_rates_positions) - 1:
-            boundary_end = high_rates_positions[i]
-        else:
+        if i < len(high_rates_positions) - 1:
+            boundary_start = high_rates_positions[i]
             boundary_end = high_rates_positions[i+1]
-        haploblock_boundaries.append((boundary_start, boundary_end))
+            haploblock_boundaries.append((boundary_start, boundary_end))
+        else:
+            break
     
     return(haploblock_boundaries)
 
