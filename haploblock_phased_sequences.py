@@ -138,12 +138,10 @@ def main(boundaries_file, vcf, ref, chr_map, chr, out):
     for (start, end) in haploblock_boundaries:
         logger.info(f"Generating phased VCF for haploblock {start}-{end}")
         extract_region_from_vcf(vcf, chr, chr_map, start, end, out)
-        break
 
     for (start, end) in haploblock_boundaries:
         logger.info(f"Generating phased fasta for haploblock {start}-{end}")
         generate_consensus_seq(ref, chr, start, end, out)
-        break
 
 
 if __name__ == "__main__":
