@@ -8,20 +8,21 @@ We assume all data listed below is downloaded into `data/`:
 
 1. deCODE recombination map from Palsson et al., 2024 including both crossover (CO) and non-crossover (NCO) recombination: https://doi.org/10.5281/zenodo.14025564
 
-2. high-resolution recombination map from Halldorsson et al., 2019 with empirically defined recombination rates (**cMperMb**)
+2. high-resolution recombination map from Halldorsson et al., 2019 with empirically defined recombination rates
 
 3. 1000Genomes, HGSVC, Phase 3: phased VCF file for Han Chinese in Beijing, China (https://www.internationalgenome.org/data-portal/population/CHB) chromosome 6:
 ```
 wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz
 ```
 
+and index file:
 ```
 wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz.tbi
 ```
 
 4. Reference sequence for chromosome 6 (GRCh38):
 ```
-https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr6.fa.gz
+wget https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr6.fa.gz
 ```
 
 
@@ -30,9 +31,9 @@ https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr6.fa.gz
 TBD
 
 
-## Haploblock boundaries
+## Exploring recombination maps
 
-All code for exploring recombination maps is in [haploblock_breakpoints.ipynb](haploblock_breakpoints.ipynb)
+All code for exploring recombination maps is in [haploblock_breakpoints.ipynb](notebooks/haploblock_breakpoints.ipynb)
 
 ### Recombination map from Palsson et al., 2024
 
@@ -46,13 +47,13 @@ How the data looks:
 | chr1 | 3500000 | 0.07209863513708115 | 1.9589810371398926 | 0.3275741636753082 | 0.3099609315395355 | 0.0027675277087837458 |
 | chr1 | 4500000 | 0.06319160014390945 | 2.5238749980926514 | 0.3032439053058624 | 0.1271921992301941 | 0.002952029462903738 |
 
-Are map (cM), cMperMb, DSBs/Mb per meiosis, deltaDSB and oNCO correlated?
-
 ![alt text](figures/Palsson2024/recomb_map_chr6_mat_all_columns_one_plot_norm.png)
+
+Are map (cM), cMperMb, DSBs/Mb per meiosis, deltaDSB and oNCO correlated?
 
 ![alt text](figures/Palsson2024/recomb_map_chr6_mat_all_columns_corr.png)
 
-We used DSB rate to find haploblock boundaries.
+We used DSB rate (DSBs/Mb per meiosis) to find haploblock boundaries.
 
 1) We found 12 positions with high recombination rates defined as **rate > 2*average**:
 
@@ -112,11 +113,9 @@ We compared different sigma for Gaussian smoothing:
 
 ### Recombination map from Halldersson et al., 2019
 
-We used cMperMb to generate haploblock boundaries. 
+We used cMperMb to generate haploblock boundaries.
 
 1) We found 1398 positions with high recombination rates defined as **rate > 10*average**:
-
-see haploblock_boundaries_chr6.tsv
 
 2) We found 11855 positions with high recombination rates defined as **rate > 1.5*IQR**.
 
@@ -137,19 +136,36 @@ The number of peaks found with different sigma:
 | 10 | 1210 |
 
 
-## Run pipeline
+## Run automated pipeline
 
 1. Generate haploblock boundaries
 ```
 python haploblock_boundaries.py --recombination_file data/Halldorsson2019/aau1043_datas3 --chr chr6 > data/haploblock_boundaries_chr6.tsv
 ```
 
+See [haploblock_boundaries_chr6.tsv](data/haploblock_boundaries_chr6.tsv) for 1398 haploblock boundaries (generated using high recombination rates defined as **rate > 10*average**).
+
 2. 1000Genomes phased VCF -> Haploblock phased VCFs -> Phased fasta files
 ```
-python split_VCF.py  --boundaries_file data/haploblock_boundaries_chr6.tsv --vcf data/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz --ref data/ref_chr6.fa.gz --chr_map data/chr_map --chr 6 --out data/
+python haploblock_phased_sequences.py --boundaries_file data/haploblock_boundaries_chr6.tsv --vcf data/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz --ref data/ref_chr6.fa.gz --chr_map data/chr_map --chr 6 --out data/
 ```
 
-VCF has 6 instead of chr6, which is required by bcftools consensus, create chr_map: "6 chr6" one mapping per line
+First, the script [haploblock_phased_sequences.py](haploblock_phased_sequences.py) uses bcftools and bgzip to extract regions corresponding to haploblock boundaries from a VCF file and generates the following files in directory provided by --out:
+- {chr}_region_{start}-{end}.vcf.gz
+- {chr}_region_{start}-{end}.vcf.gz.csi
+- chr{chr}_region_{start}-{end}.vcf
+- chr{chr}_region_{start}-{end}.vcf.gz
+- chr{chr}_region_{start}-{end}.vcf.gz.csi
+
+Note: VCF has 6 instead of chr6, which is required by bcftools consensus, create file chr_map: "6 chr6" one mapping per line and provide it by --chr_map.
+
+Then it uses samtools and bcftools consensus to apply variants from previously generated VCF to reference sequence and it generates the following files in directory provided by --out:
+- ref_chr6.fa.gz.fai
+- ref_chr6.fa.gz.gzi
+- chr{chr}_region_{start}-{end}.fa.gz
+
+We generated phased fasta files for all haploblocks of chromosome 6.
+
 
 5. Population-specific haploblock alignments
 
