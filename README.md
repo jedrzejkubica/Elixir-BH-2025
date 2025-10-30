@@ -2,13 +2,26 @@
 
 # Elixir-BH-2025
 
+# How to use this repo
+
+```
+git clone https://github.com/jedrzejkubica/Elixir-BH-2025.git
+cd Elixir-BH-2025
+```
+
 # Data
 
 We assume all data listed below is downloaded into `data/`:
 
-1. deCODE recombination map from Palsson et al., 2024 including both crossover (CO) and non-crossover (NCO) recombination: https://doi.org/10.5281/zenodo.14025564
+1. deCODE recombination map from Palsson et al., 2024 including both crossover (CO) and non-crsossover (NCO) recombination: https://doi.org/10.5281/zenodo.14025564
 
-2. high-resolution recombination map from Halldorsson et al., 2019 with empirically defined recombination rates
+2. high-resolution recombination map from Halldorsson et al., 2019 with empirically defined recombination rates:
+```
+wget https://www.science.org/doi/suppl/10.1126/science.aau1043/suppl_file/aau1043_datas3.gz
+gzip -d aau1043_datas3.gz
+```
+
+aau1043_datas3 contains 
 
 3. 1000Genomes, HGSVC, Phase 3: phased VCF file for Han Chinese in Beijing, China (https://www.internationalgenome.org/data-portal/population/CHB) chromosome 6:
 ```
