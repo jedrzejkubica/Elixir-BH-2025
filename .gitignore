@@ -1,2 +1,8 @@
-data
 .vscode
+
+# but not Halldorsson2019 recombination map (wget 403 error)
+data/*
+data/Halldorsson2019/*
+!data/
+!data/Halldorsson2019/
+!data/Halldorsson2019/aau1043_datas3.gz
