@@ -206,8 +206,8 @@ def generate_consensus_fasta(fasta, vcf, out):
     - ref_chr6.fa.gz.gzi
     - chr{chr}_region_{start}-{end}.fa.gz
     """
-    output_hap1 = os.path.join(out, pathlib.Path(vcf.stem).stem + "hap1.fa")  # removes .vcf.gz
-    output_hap2 = os.path.join(out, pathlib.Path(vcf.stem).stem + "hap2.fa")  # removes .vcf.gz
+    output_hap1 = os.path.join(out, pathlib.Path(vcf.stem).stem + "_hap1.fa")  # removes .vcf.gz
+    output_hap2 = os.path.join(out, pathlib.Path(vcf.stem).stem + "_hap2.fa")  # removes .vcf.gz
     
     # create a consensus sequence (fasta) from reference and variants extracted from VCF
     # haploid sequence 1

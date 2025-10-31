@@ -173,7 +173,7 @@ Note: VCF has 6 instead of chr6, which is required by bcftools consensus, create
 
 Then it parses the samples file, and for each sample generates a consensus sequence (using samtools and bcftools) by applying variants from previously generated VCF to reference sequence.
 
-We generated haploblock phased sequences for all samples from the CBH population for chromosome 6.
+We generated haploblock phased sequences (format: sample_chr_region_start-end_hap1/2.fa) for all samples from the CBH population for chromosome 6.
 
 5. Population-specific haploblock alignments
 
