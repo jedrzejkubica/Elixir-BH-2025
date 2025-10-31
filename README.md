@@ -21,9 +21,11 @@ wget https://www.science.org/doi/suppl/10.1126/science.aau1043/suppl_file/aau104
 gzip -d aau1043_datas3.gz
 ```
 
-aau1043_datas3 contains 
+File `aau1043_datas3` contains averaged maternal and paternal recombination rates.
 
-3. 1000Genomes, HGSVC, Phase 3: phased VCF file for Han Chinese in Beijing, China (https://www.internationalgenome.org/data-portal/population/CHB) chromosome 6:
+3. 1000Genomes, HGSVC, Phase 3
+
+Phased VCF file of chromosome 6 for Han Chinese in Beijing, China (https://www.internationalgenome.org/data-portal/population/CHB):
 ```
 wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz
 ```
@@ -33,9 +35,9 @@ and index file:
 wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz.tbi
 ```
 
-and a TSV file with the list of samples: https://www.internationalgenome.org/data-portal/population/CHB
+and a TSV file with the list of samples in CHB: https://www.internationalgenome.org/data-portal/population/CHB
 
-4. Reference sequence for chromosome 6 (GRCh38):
+4. Reference sequence for chromosome 6 (GRCh38), must be bgzipped:
 ```
 wget https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr6.fa.gz
 gzip -d chr6.fa.gz
@@ -155,46 +157,45 @@ The number of peaks found with different sigma:
 
 ## Run automated pipeline
 
-1. Generate haploblock boundaries
+#### 1. Generate haploblock boundaries for chr6 using the Halldorsson2019 recombination map:
 ```
 python haploblock_boundaries.py --recombination_file data/Halldorsson2019/aau1043_datas3 --chr chr6 > data/haploblock_boundaries_chr6.tsv
 ```
 
-See [haploblock_boundaries_chr6.tsv](data/haploblock_boundaries_chr6.tsv) for 1398 haploblock boundaries (generated using high recombination rates defined as **rate > 10*average**).
+See [haploblock_boundaries_chr6.tsv](data/haploblock_boundaries_chr6.tsv) for 1398 haploblock boundaries (high recombination rates defined as **rate > 10*average**).
 
-2. 1000Genomes phased VCF -> Haploblock phased VCFs -> Phased fasta files
+#### 2. Generate phased VCFs and haploblock phased fasta files (1000Genomes phased VCF -> Haploblock phased VCFs -> Phased fasta files):
 ```
 python haploblock_phased_sequences.py --boundaries_file data/haploblock_boundaries_chr6.tsv --samples_file data/igsr-chb.tsv.tsv --vcf data/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz --ref data/chr6.fa.gz --chr_map data/chr_map --chr 6 --out data/
 ```
 
-The script [haploblock_phased_sequences.py](haploblock_phased_sequences.py) uses bcftools and bgzip to extract regions corresponding to haploblock boundaries from a population VCF file.
+This script uses bcftools and bgzip to extract regions corresponding to haploblock boundaries (--boundaries_file) from a population VCF file (--vcf).
 
-Note: VCF has 6 instead of chr6, which is required by bcftools consensus, create file chr_map: "6 chr6" one mapping per line and provide it by --chr_map.
+NOTE: VCF file has "6" instead of "chr6", which is required by bcftools consensus, create file chr_map with one mapping per line (e.g., "6 chr6") and provide it by --chr_map.
 
-Then it parses the samples file, and for each sample generates a consensus sequence (using samtools and bcftools) by applying variants from previously generated VCF to reference sequence.
+Then it generates a consensus haploblock phased sequences for both haploids of each sample (e.g., `NA18531_chr6_region_711055-761032_hap1.fa`) by applying variants from previously generated VCF to reference sequence (--ref).
 
-We generated haploblock phased sequences (format: sample_chr_region_start-end_hap1/2.fa) for all samples from the CBH population for chromosome 6.
+Testing: We generated haploblock phased sequences (format: sample_chr_region_start-end_hap1/2.fa) for all samples from the CBH population for 10 random haploblocks of chromosome 6.
 
+#### 3. Population-specific haploblock alignments
 
+We use TWILIGHT (https://github.com/TurakhiaLab/TWILIGHT), it requires one fasta file with haploblock phased sequences
+
+NOTE: We previously generated haploblock phased sequences, e.g., `NA18531_chr6_region_711055-761032_hap1.fa` with headers like ">chr6:711055-761032", but each sequence in the merged fasta file must have a unique header, this can be done with:
 ```
 mkdir data/haploblock_phased_seq_random10
 mv data/NA* data/haploblock_phased_seq_random10/.
+./merge_fasta.sh data/haploblock_phased_seq_random10 data/haploblock_phased_seq_random10/CHB_chr6_random10_merged.fa
 ```
 
 ```
-./merge_fasta.sh data/CHB_chr6_haploblock1 data/CHB_chr6_haploblock1/CHB_chr6_haploblock1_merged.fa
+snakemake --cores 8 --config TYPE=n SEQ=/home/shadeform/Elixir-BH-2025/data/haploblock_phased_seq_random10/CHB_chr6_random10_merged.fa OUT=CHB_chr6_random10.aln
 ```
 
-5. Population-specific haploblock alignments
+see CHB_chr6_random10.aln
 
-TBD
 
-Snakemake workflow from TWILIGHT (https://github.com/TurakhiaLab/TWILIGHT):
-```
-snakemake --cores 8 --config TYPE=n SEQ=data/SRR1518049_1.fa OUT=SRR1518049_1.aln
-```
-
-6. Population-specific haploblock clusters
+#### 4. Population-specific haploblock clusters
 
 TBD
 
