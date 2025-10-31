@@ -263,8 +263,9 @@ def main(boundaries_file, samples_file, vcf, ref, chr_map, chr, out):
         logger.info(f"Generating phased fasta for haploblock {start}-{end}")
         region_fasta = extract_region_from_fasta(ref, chr, start, end, out)
 
+        logger.info(f"Generating consensus fastas for haploblock {start}-{end}")
         for sample in samples:
-            logger.info(f"Generating phased VCF for haploblock {start}-{end} for sample %s", sample)
+            # logger.info(f"Generating phased VCF for haploblock {start}-{end} for sample %s", sample)
             sample_vcf = extract_sample_from_vcf(region_vcf, sample, out)
 
             (sample_hap1, sample_hap2) = generate_consensus_fasta(region_fasta, sample_vcf, out)
