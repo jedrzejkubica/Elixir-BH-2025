@@ -175,6 +175,16 @@ Then it parses the samples file, and for each sample generates a consensus seque
 
 We generated haploblock phased sequences (format: sample_chr_region_start-end_hap1/2.fa) for all samples from the CBH population for chromosome 6.
 
+
+```
+mkdir data/haploblock_phased_seq_random10
+mv data/NA* data/haploblock_phased_seq_random10/.
+```
+
+```
+./merge_fasta.sh data/CHB_chr6_haploblock1 data/CHB_chr6_haploblock1/CHB_chr6_haploblock1_merged.fa
+```
+
 5. Population-specific haploblock alignments
 
 TBD

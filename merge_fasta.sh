@@ -25,19 +25,18 @@ for f in "$input_dir"/*.fasta "$input_dir"/*.fa; do
         continue
     fi
 
-    name=$(basename "$f")
-    name_noext="${name%.*}"
+    # Remove extension
+    name_noext=$(basename "$f" | sed 's/\.[^.]*$//')
 
-    # Extract region pattern (e.g. chr6_region_711055-761032_hap1)
-    region=$(echo "$name_noext" | grep -oE 'chr[0-9XYM]+_region_[0-9]+-[0-9]+_hap[0-9]+')
+    # Extract sample name and region from filename
+    # Assumes filename format: sample_chrX_region_start-end_hapN
+    # e.g., NA18531_chr6_region_711055-761032_hap1
+    header=$(echo "$name_noext" | grep -oE '[^_]+_chr[0-9XYM]+_region_[0-9]+-[0-9]+_hap[0-9]+')
 
-    # Extract sample name (everything before region)
-    sample=$(echo "$name_noext" | sed "s/_${region}//")
+    # Fallback: if grep fails, use the whole filename
+    [ -z "$header" ] && header="$name_noext"
 
-    # Construct clean header
-    echo ">${sample}_${region}" >> "$output"
-
-    # Append sequence without header
+    echo ">$header" >> "$output"
     grep -v "^>" "$f" >> "$output"
 done
 
