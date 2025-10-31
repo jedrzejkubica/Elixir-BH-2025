@@ -162,6 +162,7 @@ def extract_sample_from_vcf(vcf, sample, out):
 
     # extract sample from VCF and index
     subprocess.run(["bcftools", "view",
+                    "--force-samples",  # only warn about unknown subset samples
                     "-s", sample,
                     "-o", output_vcf,
                     vcf],
