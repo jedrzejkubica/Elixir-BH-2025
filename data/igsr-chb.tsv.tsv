@@ -1,0 +1,114 @@
+Sample name	Sex	Biosample ID	Population code	Population name	Superpopulation code	Superpopulation name	Population elastic ID	Data collections
+NA18531	female	SAME124483	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18536	male	SAME124486	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18543	male	SAME124268	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18548	male	SAME124261	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18550	female	SAME124087	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18555	female	SAME124090	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18562	male	SAME123927	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18567	female	SAME123924	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18574	female	SAME123737	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18579	female	SAME123742	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18593	female	SAME123720	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18606	male	SAME124879	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18613	male	SAME125037	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18618	female	SAME125042	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18620	male	SAME124510	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18625	female	SAME125253	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18632	male	SAME124703	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18637	male	SAME124700	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18644	female	SAME122976	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release
+NA18740	male	SAME123917	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18745	male	SAME123914	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18757	male	SAME123727	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18795	female	SAME124990	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes phase 3 release
+NA18524	male	SAME124671	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	90 Han Chinese high coverage genomes
+NA18529	female	SAME124662	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	90 Han Chinese high coverage genomes
+NA18527	female	SAME124674	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18534	male	SAME124488	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 2,Human Genome Structural Variation Consortium, Phase 3,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18539	female	SAME124475	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18541	female	SAME124270	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18546	male	SAME124263	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18553	female	SAME124088	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18558	male	SAME124094	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18560	female	SAME123925	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18565	female	SAME123922	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18572	male	SAME123739	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18577	female	SAME123734	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18591	female	SAME123719	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release
+NA18596	female	SAME123718	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18609	male	SAME124867	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18611	male	SAME123225	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18616	female	SAME125032	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18623	male	SAME124507	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18628	female	SAME124502	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18630	female	SAME124895	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18635	male	SAME123661	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18528	female	SAME124661	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18642	female	SAME122982	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18530	male	SAME124484	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18647	male	SAME122977	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18535	female	SAME124487	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18748	male	SAME123909	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18542	female	SAME124267	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18547	female	SAME124264	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18559	male	SAME124093	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18561	male	SAME123926	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18566	female	SAME123923	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18573	female	SAME123738	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18592	female	SAME123721	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18597	female	SAME123232	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18605	male	SAME124877	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18612	male	SAME125036	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18617	female	SAME125033	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18624	male	SAME124506	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18629	male	SAME124501	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release
+NA18631	female	SAME124056	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18636	male	SAME124320	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18643	male	SAME122981	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18648	male	SAME122974	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release
+NA18749	male	SAME123910	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18794	male	SAME124989	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes phase 3 release
+NA18526	female	SAME124673	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18533	female	SAME124481	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release
+NA18538	female	SAME123774	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18545	female	SAME124266	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18552	female	SAME124089	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18557	male	SAME124092	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18564	female	SAME123921	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18571	female	SAME123740	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18576	female	SAME123735	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18595	female	SAME123228	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18603	male	SAME124875	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18608	male	SAME124779	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18610	female	SAME123222	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18615	female	SAME123653	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18622	male	SAME125260	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18627	female	SAME124106	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18634	female	SAME124697	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18639	male	SAME124694	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18641	female	SAME122979	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18646	female	SAME122978	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA18747	male	SAME123916	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18525	female	SAME124672	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18532	female	SAME124482	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18537	female	SAME124485	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18544	male	SAME124265	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18549	male	SAME124262	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18563	male	SAME123928	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18570	female	SAME123741	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18582	female	SAME123905	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18599	female	SAME123713	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18602	female	SAME124876	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18614	female	SAME125034	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18619	female	SAME125043	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18621	male	SAME124509	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18626	female	SAME125250	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18633	male	SAME124704	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18638	male	SAME124693	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18640	female	SAME122980	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18645	male	SAME122975	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18791	male	SAME124073	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes phase 3 release
+NA18540	female	SAME124269	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1KG_ONT_VIENNA,90 Han Chinese high coverage genomes
+NA18594	female		CHB	Han Chinese	EAS	East Asian Ancestry	CHB	90 Han Chinese high coverage genomes
+NA18741	female		CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1KG_ONT_VIENNA
