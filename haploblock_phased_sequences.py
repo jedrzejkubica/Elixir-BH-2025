@@ -267,9 +267,6 @@ def main(boundaries_file, samples_file, vcf, ref, chr_map, chr, out):
             sample_vcf = extract_sample_from_vcf(region_vcf, sample, out)
 
             (sample_hap1, sample_hap2) = generate_consensus_fasta(region_fasta, sample_vcf, out)
-            break
-        
-        break
 
 
 if __name__ == "__main__":
