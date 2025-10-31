@@ -206,22 +206,27 @@ def generate_consensus_fasta(fasta, vcf, out):
     - ref_chr6.fa.gz.gzi
     - chr{chr}_region_{start}-{end}.fa.gz
     """
-    output_fasta = os.path.join(out, pathlib.Path(vcf.stem).stem + ".fa")  # removes .vcf.gz
+    output_hap1 = os.path.join(out, pathlib.Path(vcf.stem).stem + "hap1.fa")  # removes .vcf.gz
+    output_hap2 = os.path.join(out, pathlib.Path(vcf.stem).stem + "hap2.fa")  # removes .vcf.gz
     
     # create a consensus sequence (fasta) from reference and variants extracted from VCF
+    # haploid sequence 1
     subprocess.run(["bcftools", "consensus",
+                    "-H", "1",
                     "-f", fasta,
                     vcf],
-                    stdout=open(output_fasta, "w"),
+                    stdout=open(output_hap1, "w"),
+                    check=True)
+    
+    # haploid sequence 2
+    subprocess.run(["bcftools", "consensus",
+                    "-H", "2",
+                    "-f", fasta,
+                    vcf],
+                    stdout=open(output_hap2, "w"),
                     check=True)
 
-    subprocess.run(["bgzip",
-                    output_fasta],
-                    check=True)
-
-    output_fasta_bgzip = pathlib.Path(output_fasta + ".gz")
-
-    return(output_fasta_bgzip)
+    return(output_hap1, output_hap2)
 
 
 def main(boundaries_file, samples_file, vcf, ref, chr_map, chr, out):
@@ -261,7 +266,7 @@ def main(boundaries_file, samples_file, vcf, ref, chr_map, chr, out):
             logger.info(f"Generating phased VCF for haploblock {start}-{end} for sample %s", sample)
             sample_vcf = extract_sample_from_vcf(region_vcf, sample, out)
 
-            sample_consensus = generate_consensus_fasta(region_fasta, sample_vcf, out)
+            (sample_hap1, sample_hap2) = generate_consensus_fasta(region_fasta, sample_vcf, out)
             break
         
         break
