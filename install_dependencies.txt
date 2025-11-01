@@ -16,9 +16,32 @@ cd samtools/htslib/bcftools
 make
 make install
 
-# create simlinks for calling everywhere
+# create simlinks for access everywhere
 cd /usr/bin
 sudo ln -s ~/samtools-1.22.1/samtools .
 sudo ln -s ~/bcftools-1.22/bcftools .
 sudo ln -s ~/htslib-1.22.1/bgzip .
 sudo ln -s ~/htslib-1.22.1/tabix .
+
+# install TWILIGHT (https://github.com/TurakhiaLab/TWILIGHT)
+install Conda if necessary:
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+./Miniconda3-latest-Linux-x86_64.sh
+
+sudo apt install -y wget build-essential libboost-all-dev cmake libtbb-dev
+
+conda create -n twilight python=3.11 -y
+conda install bioconda::twilight
+conda activate twiligh
+
+git clone https://github.com/TurakhiaLab/TWILIGHT.git
+cd TWILIGHT
+bash ./install/buildTWILIGHT.sh
+bash ./install/installIterative.sh
+
+test: twilight -t dataset/RNASim.nwk -i dataset/RNASim.fa -o dataset/RNASim.aln
+
+test iterative:
+cd workflow
+snakemake --cores 8 --config TYPE=n SEQ=../dataset/RNASim.fa OUT=RNASim.aln
