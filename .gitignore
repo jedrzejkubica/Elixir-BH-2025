@@ -3,9 +3,14 @@
 # but not Halldorsson2019 recombination map (wget 403 error)
 data/*
 data/Halldorsson2019/*
+data/CHB_chr6_random10/*
 
 !data/
 !data/chr_map
 !data/igsr-chb.tsv.tsv
 !data/Halldorsson2019/
 !data/Halldorsson2019/aau1043_datas3.gz
+!data/haploblock_boundaries_chr6.tsv
+!data/haploblock_boundaries_chr6_random10.tsv
+!data/CHB_chr6_random10/
+!data/CHB_chr6_random10/CHB_chr6_random10_merged.fa.gz

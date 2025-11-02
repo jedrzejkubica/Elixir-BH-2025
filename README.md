@@ -186,6 +186,7 @@ NOTE: We previously generated haploblock phased sequences, e.g., `NA18531_chr6_r
 mkdir data/haploblock_phased_seq_random10
 mv data/NA* data/haploblock_phased_seq_random10/.
 ./merge_fasta.sh data/haploblock_phased_seq_random10 data/haploblock_phased_seq_random10/CHB_chr6_random10_merged.fa
+LOG: Merged FASTA written to: data/CHB_chr6_random10/CHB_chr6_random10_merged.fa
 ```
 
 ```
