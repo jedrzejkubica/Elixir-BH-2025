@@ -80,13 +80,13 @@ def parse_samples(samples_file):
     
     for line in f:
         split_line = line.rstrip().split('\t')
+        
+        (sample, *_) = split_line
 
-        if len(split_line) != 9:
+        if not sample.startswith("HG") or sample.startswith("NA"):
             logger.error("Samples file %s has bad line (not 9 tab-separated fields): %s",
                          samples_file, line)
             raise Exception("Bad line in the samples file")
-        
-        (sample, *_) = split_line
 
         samples.append(sample)
 
@@ -115,6 +115,7 @@ def extract_region_from_vcf(vcf, chr, chr_map, start, end, out):
 
     subprocess.run(["bcftools", "view",
                     "-r", f"{chr}:{start}-{end}",
+                    "--min-af", "0.05",
                     vcf,
                     "-o", temporary_vcf],
                     check=True)
