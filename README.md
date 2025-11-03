@@ -35,7 +35,10 @@ and index file:
 wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz.tbi
 ```
 
-and a TSV file with the list of samples in CHB: https://www.internationalgenome.org/data-portal/population/CHB
+and a TSV file with the list of samples in pupulations:
+- CHB (113 samples): https://www.internationalgenome.org/data-portal/population/CHB
+- PUR (150 samples): https://www.internationalgenome.org/data-portal/population/PUR
+- GBR (107 samples): https://www.internationalgenome.org/data-portal/population/GBR
 
 4. Reference sequence for chromosome 6 (GRCh38), must be bgzipped:
 ```
@@ -175,9 +178,9 @@ NOTE: VCF file has "6" instead of "chr6", which is required by bcftools consensu
 
 Then it generates a consensus haploblock phased sequences for both haploids of each sample (e.g., `NA18531_chr6_region_711055-761032_hap1.fa`) by applying variants from previously generated VCF to reference sequence (--ref).
 
-Testing: We generated haploblock phased sequences (format: sample_chr_region_start-end_hap1/2.fa) for all samples from the CBH population for 10 random haploblocks of chromosome 6.
+Testing: We generated haploblock phased sequences (format: sample_chr_region_start-end_hap1/2.fa) for all samples from the CBH, PUR and GBR populations for 5 random haploblocks of chromosome 6.
 
-#### 3. Population-specific haploblock alignments
+#### 3. Population-specific haploblock alignments ?
 
 We use TWILIGHT (https://github.com/TurakhiaLab/TWILIGHT), it requires one fasta file with haploblock phased sequences
 
@@ -185,8 +188,9 @@ NOTE: We previously generated haploblock phased sequences, e.g., `NA18531_chr6_r
 ```
 mkdir data/haploblock_phased_seq_random10
 mv data/NA* data/haploblock_phased_seq_random10/.
-./merge_fasta.sh data/haploblock_phased_seq_random10 data/haploblock_phased_seq_random10/CHB_chr6_random10_merged.fa
+./merge_fasta_per_region.sh data/haploblock_phased_seq_random10 data/CHB # generates one fa file per region in output dir
 LOG: Merged FASTA written to: data/CHB_chr6_random10/CHB_chr6_random10_merged.fa
+bgzip if needed
 ```
 
 ```
