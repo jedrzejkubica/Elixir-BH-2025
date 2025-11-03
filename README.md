@@ -169,14 +169,14 @@ See [haploblock_boundaries_chr6.tsv](data/haploblock_boundaries_chr6.tsv) for 13
 
 #### 2. Generate phased VCFs and haploblock phased fasta files (1000Genomes phased VCF -> Haploblock phased VCFs -> Phased fasta files):
 ```
-python haploblock_phased_sequences.py --boundaries_file data/haploblock_boundaries_chr6.tsv --samples_file data/igsr-chb.tsv.tsv --vcf data/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz --ref data/chr6.fa.gz --chr_map data/chr_map --chr 6 --out data/
+python haploblock_phased_sequences.py --boundaries_file data/haploblock_boundaries_chr6.tsv --samples_file data/igsr-chb.tsv.tsv --vcf data/ALL.chr6.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz --ref data/chr6.fa.gz --chr_map data/chr_map --chr 6 --out data/CHB/
 ```
 
 This script uses bcftools and bgzip to extract regions corresponding to haploblock boundaries (--boundaries_file) from a population VCF file (--vcf).
 
 NOTE: VCF file has "6" instead of "chr6", which is required by bcftools consensus, create file chr_map with one mapping per line (e.g., "6 chr6") and provide it by --chr_map.
 
-Then it generates a consensus haploblock phased sequences for both haploids of each sample (e.g., `NA18531_chr6_region_711055-761032_hap1.fa`) by applying variants from previously generated VCF to reference sequence (--ref).
+Then it generates a consensus haploblock phased sequences for both haploids of each sample (e.g., `NA18531_chr6_region_711055-761032_hap1.fa`) by applying common variants (bcftools view `--min-af 0.05`) from previously generated VCF to reference sequence (--ref).
 
 Testing: We generated haploblock phased sequences (format: sample_chr_region_start-end_hap1/2.fa) for all samples from the CBH, PUR and GBR populations for 5 random haploblocks of chromosome 6.
 
@@ -186,18 +186,23 @@ We use TWILIGHT (https://github.com/TurakhiaLab/TWILIGHT), it requires one fasta
 
 NOTE: We previously generated haploblock phased sequences, e.g., `NA18531_chr6_region_711055-761032_hap1.fa` with headers like ">chr6:711055-761032", but each sequence in the merged fasta file must have a unique header, this can be done with:
 ```
-mkdir data/haploblock_phased_seq_random10
-mv data/NA* data/haploblock_phased_seq_random10/.
-./merge_fasta_per_region.sh data/haploblock_phased_seq_random10 data/CHB # generates one fa file per region in output dir
-LOG: Merged FASTA written to: data/CHB_chr6_random10/CHB_chr6_random10_merged.fa
-bgzip if needed
+mkdir data/CHB/haploblock_phased_seq_random5
+mv data/CHB/NA* data/CHB/haploblock_phased_seq_random5/.  ## or HG* for GBR
+# generates one fasta file per region in output dir
+mkdir data/CHB/haploblock_phased_seq_random5/haploblock_phased_seq_merged
+./merge_fasta_per_region.sh data/CHB/haploblock_phased_seq_random5 data/CHB/haploblock_phased_seq_random5/haploblock_phased_seq_merged
+LOG: Merged FASTA written to: data/CHB_chr6_random10/CHB_chr6_random5_merged.fa
 ```
 
 ```
-snakemake --cores 8 --config TYPE=n SEQ=/home/shadeform/Elixir-BH-2025/data/haploblock_phased_seq_random10/CHB_chr6_random10_merged.fa OUT=CHB_chr6_random10.aln
+tar -zcvf data/CHB/haploblock_phased_seq_random5/CHB_haploblock_phased_seq_merged.tar.gz data/CHB/haploblock_phased_seq_random5/haploblock_phased_seq_merged
 ```
 
-see CHB_chr6_random10.aln
+```
+snakemake --cores 8 --config TYPE=n SEQ=/home/shadeform/Elixir-BH-2025/data/haploblock_phased_seq_random5/CHB_chr6_random10_merged.fa OUT=CHB_chr6_random5.aln
+```
+
+see CHB_chr6_random5.aln
 
 
 #### 4. Population-specific haploblock clusters
