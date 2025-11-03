@@ -1,0 +1,44 @@
+# **Tasks for biohackathon as of Noon, Nov 3**
+
+* Move github repo to collaborative bioinformatics (Ben)  
+  * Clone it and push it back  
+* make 15 fastas  with MAF \>= .05 (jedrzej)  
+  * 3 populations   
+  * 5 regions  
+  * 200 sequences  
+* test uclust (Kris)  
+* test meshclust3.0 (Ben)  
+* test mmseqs2 (Jedrzej)  
+* compare results  (all)   
+  * cluster quality  
+  * \+ consistency across haploblocks  
+  * \+ reasonably consistent numbers  
+  * \+ may need to do alignments (later)  
+  * \++ then construct genetic relatedness matrix \-- act as gold standard  
+  * speed \-- calculate how long it will take to do this for 36,400 sequence sets  
+* \#\#\#  
+* examine interesting gene regions (optional)  
+  * Make a few more haploblocks targeting interesting gene regions (Jedrzej)  
+    * TNFa  
+    * HLA  
+* create hashes (tags)  
+* Framework for individual hash mapping  
+  * Quickly label (or count) those combinations that actually exist in individuals  
+* Expand out to all European populations  
+* Background haplotype overlap between populations  (Kris?)  
+  * Define a criteria for merging clusters   
+  * One possibility: calculate (euclidean?) distance between all clusters and merge those closest thogether based on some sort of similarity threshold   
+  * How do you do this in a non relativistic way?  
+* layer on disease related SNPs (for a few example diseases)  
+  * ClinVar  
+  * GWAS catalog  
+  * PRS catalog (later)  
+  * Which SNPs exist on which clusters  
+  * How do you reflect that in hash structure  
+*   
+*   
+*   
+* 
+
+---
+
