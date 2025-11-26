@@ -1,4 +1,4 @@
-# **Tasks for biohackathon as of Noon, Nov 3**
+# **Tasks for BioHackathon, Nov 3rd**
 
 * Move github repo to collaborative bioinformatics (Ben)  
   * Clone it and push it back  
